@@ -9,8 +9,6 @@ Katharina Kleinhans · First Term Project WiSe 25/26 · Filmuniversität KONRAD 
 
 ## Table of Contents
 
-## Table of Contents
-
 1. [Concept and Early Exploration](#1-concept-and-early-exploration)
    - 1.1 [Concept Development](#11-concept-development)
    - 1.2 [First Technical Setup – Hardware and Software Decisions](#12-first-technical-setup--hardware-and-software-decisions)
@@ -19,9 +17,9 @@ Katharina Kleinhans · First Term Project WiSe 25/26 · Filmuniversität KONRAD 
 2. [Testing and Technical Reorientation](#2-testing-and-technical-reorientation)
    - 2.1 [First User Test – 04.02. with the Acting Class](#21-first-user-test--0402-with-the-acting-class)
    - 2.2 [Calibration System & Data Normalization](#22-calibration-system--data-normalization)
-   - 2.3 [Second Test – 04.03. with Riccardo in the Theater Hall](#23-second-test--0403-with-riccardo-in-the-theater-hall)
+   - 2.3 [Second Test – 04.03. with Riccardo in Theatersaal](#23-second-test--0403-with-riccardo-in-theatersaal)
    - 2.4 [Data Refinements and Concept Changes](#24-data-refinements-and-concept-changes)
-   - 2.5 [Third Test – 06.03. with Riccardo in the Theater Hall](#25-third-test--0603-with-riccardo-in-the-theater-hall)
+   - 2.5 [Third Test – 06.03. with Riccardo in Theatersaal](#25-third-test--0603-with-riccardo-in-theatersaal)
 
 3. [Final System Development](#3-final-system-development)
    - 3.1 [Dynamic Workflow and Built Pipeline](#31-dynamic-workflow-and-built-pipeline)
@@ -319,9 +317,9 @@ The idea was to make the data more controllable through:
 
 ---
 
-### 2.3 Second Test – 04.03. with Riccardo in the Theater Hall
+### 2.3 Second Test – 04.03. with Riccardo in Theatersaal
 
-In the context of the acting movement project, we were able to rent the theater hall for further tests.
+In the context of the acting movement project, we were able to rent Theatersaal for further tests.
 
 **Goal:** *Test the refined technical setup with Kinect V2, sound material, and calibration.*
 
@@ -417,7 +415,7 @@ This included values such as:
 
 ---
 
-### 2.5 Third Test – 06.03. with Riccardo in the Theater Hall
+### 2.5 Third Test – 06.03. with Riccardo in Theatersaal
 
 **Goal:** *Test the technical changes based on relative motion data and newly implemented sound ideas.*
 
