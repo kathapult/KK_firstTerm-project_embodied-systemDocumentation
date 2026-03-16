@@ -9,6 +9,7 @@ Katharina Kleinhans · First Term Project WiSe 25/26 · Filmuniversität KONRAD 
 
 ## Table of Contents
 
+**Work Diary**
 1. [Concept and Early Exploration](#1-concept-and-early-exploration)
    - 1.1 [Concept Development](#11-concept-development)
    - 1.2 [First Technical Setup – Hardware and Software Decisions](#12-first-technical-setup--hardware-and-software-decisions)
@@ -31,8 +32,25 @@ Katharina Kleinhans · First Term Project WiSe 25/26 · Filmuniversität KONRAD 
 
 4. [Test Run](#4-test-run)
 
+***Project Categorization***
+* [Creative / Artistic Development](#creative--artistic-development)
+* [Narrative Development](#narrative-development)
+* [Audio-Visual Design](#audio-visual-design)
+* [Software Development](#software-development)
+* [Hardware and Pipeline Development](#hardware-and-pipeline-development)
+* [Algorithms](#algorithms)
+* [Research / Experimentation](#research--experimentation)
+
+***Reflection***
+* [Reflection of Technical Choices](#reflection-of-technical-choices)
+* [Reflection on Minimal Viable Product and Best-Case Scenario Plans](#reflection-on-your-minimal-viable-product-and-best-case-scenario-plans)
+* [Comfort Zone](#comfort-zone)
+* [Reflection on Original Work Plan with Timeline](#reflection-original-work-plan-with-timeline)
+
 ---
 <br>
+
+## Work Diary
 
 ## 1. Concept and Early Exploration
 
@@ -689,9 +707,7 @@ looking forward for the theater project!! :)
 
 ## Creative / Artistic Development
 
-A central part of my result is the creative and artistic development of a body-driven sound instrument. The project developed from a rather open conceptual idea about dramaturgy, emotional states, and bodily presence into a performative system in which movement, posture, and gesture continuously shape a layered sound environment.
-
-An important artistic development was the shift from thinking about the body mainly in relation to space toward thinking about the body in relation to itself. This changed the aesthetic direction of the work and helped me create a more embodied and performative interaction.
+A central part of my result is the artistic development of a body-driven sound instrument. The project developed from a rather open conceptual idea about dramaturgy, emotional states, and bodily presence into a performative system in which movement, posture, and gesture continuously shape a sound environment. An important artistic development was the shift from thinking about the body mainly in relation to space toward thinking about the body in relation to itself. 
 
 ## Narrative Development
 
@@ -711,13 +727,6 @@ On the audio side, I developed a layered sound environment consisting of drones,
 
 Not direct software development, but in the sense that I had to communicate across different software systems in a very interdisciplinary way.
 
-I worked with:
-- TouchDesigner
-- Ableton Live
-- TDAbleton
-- Python inside TouchDesigner
-- OSC / MIDI communication
-
 This included:
 - setting up motion tracking pipelines
 - selecting and processing joint data
@@ -735,15 +744,12 @@ I worked with:
 - two-laptop setup for separating TouchDesigner and Ableton
 - OSC / MIDI communication between systems
 
-
-
 ## Algorithms
 
 Algorithmic aspects of the project included:
 
 - motion parameter calculations
 - threshold-based gesture recognition
-
 
 ## Research / Experimentation
 
@@ -754,7 +760,6 @@ The process included:
 - researching calibration and normalization methods
 - experimenting with mappings between movement and sound
 - testing the system with performers
-- integrating feedback from tests into technical redesigns
 
 
 # Reflection 
@@ -766,37 +771,18 @@ The process included:
 
 1. **technical setup components**
 
-
-    The decision regarding the technical components of my setup stemmed, on the one hand, from my interest in Ableton Live, my existing familiarity with TouchDesigner, and the accessibility of the Kinect V2. Even though the setup still has room for improvement in terms of reliability, it served its purpose of allowing me to explore the interplay between sound and physical movement within a realistically feasible framework.
+    The decision regarding the components of my setup came from my interest in Ableton Live, my existing familiarity with TouchDesigner, and the accessibility of the Kinect V2. Even though the setup still has room for improvement in terms of reliability, it served its purpose of allowing me to explore the interplay between sound and physical movement within a realistically framework.
 
 2. **shifting my focus to relative motion data**
 3. **streamlining my sound concept**
 
-    The shift to relative data and the simplification of the sound concept resulted particularly from my collaboration with Riccardo as he tested the setup on stage. His feedback helped me develop a sense of which parameters were truly crucial, interesting, and effective.
-    In particular, my sound concept was initially too expansive and initially hindered me from developing a precise sense of it, which was necessary to establish a comprehensible relationship between body and sound. 
-    Instead of becoming too deeply entangled in a concept, next time I would view the process more as an integrative and open-ended one.
-
+    The shift to relative data and the simplification of the sound concept resulted particularly from my collaboration with Riccardo. His feedback helped me develop a sense of which parameters were truly interesting and effective.
+    In particular, my sound concept was initially too expansive and hindered me from developing a precise sense of it, which was necessary to establish a comprehensible relationship between body and sound. Next time I would view the process more as an integrative and open-ended one.
 
 <br><br>
 
 ## Reflection on your Minimal viable product and Best-case scenario plans
 *What did you archive, what not and why?*
-
-In my projectplan I suggested this as a best case scenario:
-
-* to develope not only linear input - output relation
-* spatial sound environment with dramaturgical structures
-* dramaturgy concept for the *sound - space - time* relations, not linear but conditional
-(-> possible parameters: proximity and distance, speed and stillness, presence over time)
-
-<br>
-and this as a minimal viable product:
-
-* to develop a functioning technical setup
-* to develop a workflow between motion data and soundparameter: How do I interpret the data so that it coherently supports and expresses my emotional sound concept?
-* to develop a sound concept as a creative research: at least three soundscapes that are associated with corresponding emotions, movements, and/or states and convey these as different moods/feelings
-
-<br>
 
 At the end of this project, I have to say that I am closer to the minimal version than to the best-case scenario. 
 I have created a functioning technical setup with five different parameters and developed a functioning workflow between tracking, data processing, and sound over the course of the project. It took a lot of time to develop a feel for handling the data, its interpretation, normalization, and control. The focus therefore shifted to these technical components during the process, while the artistic part tended to be reduced.
@@ -808,10 +794,10 @@ However, in the course of the process, I increasingly noticed two things:
 1. The processing of movement data is complex and requires a broader examination than I had initially estimated
 2. A spatial soundscape is not really necessary for the intention of my project, as the legibility of the movement-sound relationship on stage works very well when the sound scene is minimal
 
-Even though I was frustrated at times about seemingly “not achieving” my goals, looking back on the process now, I realize that I learned a great deal. In addition, working with Riccardo in particular brought inspiration and flexibility to the concept. The experience of this collaboration opened my eyes to how my work can develop collaboratively and what is really interesting from the perspective of the person on stage.
+Even though I was frustrated at times about seemingly "not achieving" my goals, looking back on the process now, I realize that I learned a great deal. In addition, working with Riccardo in particular brought inspiration and flexibility to the concept. The experience of this collaboration opened my eyes to how my work can develop collaboratively and what is really interesting from the perspective of the person on stage.
 
 
-## Challenge of your comfort zone
+## Comfort Zone
 *What was new for you, and what did you learn?*
 *What was the most difficult for you?*
 
@@ -835,14 +821,8 @@ Sound production:
 * Testing my setup with other students, even though it wasn't final yet
 
 
-
-
 ## Reflection original work plan with timeline 
 *To you follow your plan and if not, why not?*
 
 As already mentioned, my focus shifted from the artistic concept to the technical aspects during the process. Through user testing with the actors, I realized that handling motion data requires much more attention than I had planned for.
 Unfortunately, my planning was also generally unrealistic in terms of time with regard to other projects.
-
-
-
-
