@@ -9,6 +9,8 @@ Katharina Kleinhans · First Term Project WiSe 25/26 · Filmuniversität KONRAD 
 
 ## Table of Contents
 
+## Table of Contents
+
 1. [Concept and Early Exploration](#1-concept-and-early-exploration)
    - 1.1 [Concept Development](#11-concept-development)
    - 1.2 [First Technical Setup – Hardware and Software Decisions](#12-first-technical-setup--hardware-and-software-decisions)
@@ -25,11 +27,11 @@ Katharina Kleinhans · First Term Project WiSe 25/26 · Filmuniversität KONRAD 
    - 3.1 [Dynamic Workflow and Built Pipeline](#31-dynamic-workflow-and-built-pipeline)
    - 3.2 [Sound Design – Reorientation & Reduction](#32-sound-design--reorientation--reduction)
    - 3.3 [Parameter Extensions & Python Scripts](#33-parameter-extensions--python-scripts)
-   - 3.4 [MIDI Trigger Connection](#34-midi-trigger-connection-1003)
+   - 3.4 [MIDI Trigger Connection](#34-midi-trigger-connection)
    - 3.5 [Gesture Detection Setup](#35-gesture-detection-setup)
-   - 3.6 [Stillness Detection](#36-stillness-detection-1403)
+   - 3.6 [Stillness Detection](#36-stillness-detection)
 
-4. [Key Development Insights](#4-key-development-insights)
+4. [Test Run](#4-test-run)
 
 ---
 <br>
@@ -581,6 +583,7 @@ I reorganized the system into more clearly separated sound functions:
 ### 3.3 Parameter Extensions & Python Scripts
 
 During the refinement workflow, I got additional ideas for more concrete and conditional parameter calculations, for example:
+
 - closed arms over the body
 - closed arms in front of the chest
 - arm speed → triggers sample
@@ -600,44 +603,30 @@ These ideas later fed into the gesture detection system.
 
 **Learnings**
 - working with CHOP Execute DAT
-- writing simple Python scripts
+- writing simple python scripts
 - a stable pipeline enables artistic refinement
 - reduction is not a limitation, but a design decision
 - technical organization is part of the creative workflow
 
 ---
 
-### 3.4 MIDI Trigger Connection (10.03.)
+### 3.4 MIDI Trigger Connection
 
 **Goal:** *Trigger sounds in Ableton directly from motion-based values in TouchDesigner.*
 
 ![midi-setup](img/midi-values.png)
 
 **Steps**
-- connecting TouchDesigner to Ableton Live via MIDI / OSC using **TDAbleton**
 - using trigger channels to activate a **CHOP Execute DAT**
 - implementing Python scripts to send MIDI notes: `SendMIDI('note', note, velocity)`
 - testing triggers for **start**, **stop**, and **stop all** sound events in Ableton
 
 **Problems**
-
-1. **Python syntax errors**
-   - Small mistakes such as `po()` instead of `op()` prevented the triggers from working.
-   - This was especially frustrating because the setup looked correct on a structural level.
-
-2. **Callback confusion**
-   - It was initially unclear which CHOP Execute DAT callbacks were needed (`onOffToOn`, `onOnToOff`).
-   - This made debugging slower.
-
-3. **Abrupt sound endings**
-   - Triggered sounds stopped too suddenly when the trigger ended.
+  - Triggered sounds stopped too suddenly when the trigger ended.
    - The result felt technically harsh and musically unconvincing.
 
 **Learnings**
-- TouchDesigner triggers can reliably control external audio via MIDI
-- CHOP Execute DAT callbacks translate data events into scripted actions
-- proper envelope / release settings in Ableton help avoid abrupt sound endings
-- debugging Python scripts carefully is essential for real-time interactivity
+- how TouchDesigner triggers control external audio via MIDI
 
 ---
 
@@ -647,98 +636,54 @@ These ideas later fed into the gesture detection system.
 
 ![gesture-detection](img/TD_gestureDetection.png)
 
-Implemented gestures included hands on chest, hands above head and crouch / low torso *(see Gesture Detection at Project Presentation)*
+Implemented gestures included hands on chest, hands above head and crouch / low torso 
 
-**Steps**
-- importing and organizing body-tracking channels in a CHOP network
+**Steps** 
+
 - creating a **CHOP Execute DAT** to access channel values with Python
-- reading key parameters:
-  - hand-to-hand distance
-  - hand-to-head distance
-  - hand-to-chest distance
-  - torso height
-  - hand positions relative to head
-  - shoulder rotation
-  - pelvis shift
-  - overall body velocity
 - defining thresholds for different gestures
 - implementing gesture conditions in Python
 - converting gestures into binary outputs and forwarding them to **gesture_out CHOP**
 
 **Problems**
-
-1. **Technical fragility**
-   - Python callbacks only triggered with the correct input CHOP and settings.
-   - Errors occurred if a referenced CHOP was not found.
-
-2. **Strict naming dependencies**
-   - Channel names had to exactly match the tracking data.
-   - Small mismatches caused the whole logic to fail.
-
-3. **Threshold instability**
-   - Continuous values fluctuated strongly.
-   - Sometimes Kinect lost track of joints.
-   - Gesture recognition flickered if the thresholds were too sensitive.
+   - Continuous values fluctuated strongly
+   - Sometimes Kinect lost track of joints
 
 **Learnings**
-- relative body relations are more reliable than absolute coordinates
-- separating gestures into a dedicated CHOP simplifies reuse in the system
-- debugging requires careful checking of node paths, channel names, and CHOP Execute triggers
-- combining distance, height, and velocity improves gesture robustness
-- threshold tuning is critical to avoid flickering states
+- working with phython!!
+
+*(see Gesture Detection at Project Presentation)*
 
 ---
 
-### 3.6 Stillness Detection (14.03.)
+### 3.6 Stillness Detection 
+
+Actually I wanted to implement a state of stilleness that when the body does not move for a given amount of time everything calms down. It dd not work directly and unfortunately I had no time to finish it.
 
 **Goal:** *Detect moments of stillness based on body velocity and convert them into stable gesture triggers.*
 
-![gesture-detection](img/first-python-skript.png)
-
-**Steps**
-- using the `SPEED_body` channel from the tracking data as an overall movement measure
-- smoothing the velocity with a **Filter CHOP**
-- applying a **Logic CHOP** with a velocity threshold (`< 0.2`) to detect stillness
-- using a **Count CHOP** to ensure a minimum duration of approximately 30 frames for intentional stillness
-- outputting the result as the binary signal `gesture_still`
-
 **Problems**
-
-1. **Noise in low-movement states**
-   - Stillness is technically difficult because even very small fluctuations remain in the data.
-   - Without smoothing, false detections occurred easily.
-
-2. **Need for temporal stability**
-   - A single threshold was not enough.
-   - The system needed a minimum duration so that stillness would be recognized as intentional.
+- not possible in the given scope of time
+- stays on to do list for theater project
 
 **Learnings**
-- stillness is not simply the absence of movement; it has to be technically stabilized
-- smoothing and duration thresholds are necessary to distinguish intentional stillness from noise
-- subtle gestures often require more care than larger movements
+- stillness has to be technically stabilizeds
 
 <br>
 <br>
 
-## 4. Key Development Insights
+## 4 Test Run
 
-Over the course of the process, several central insights became clear:
+impressions from the latest test:
 
-1. **Relative data works better than absolute data.**
-   Absolute coordinates depended too strongly on camera perspective, room setup, and performer position. Relative relations between body parts were much more stable and intuitive.
+![test run](img/test-run3.png)
 
-2. **Reduction improves clarity.**
-   Too many mappings and too many sound layers made the interaction harder to understand. A smaller number of clearly defined relations worked better artistically and technically.
+<br>
 
-3. **Testing with performers is essential.**
-   Important decisions only became obvious through practical testing, especially through feedback from Riccardo.
+![test run](img/test-run2.jpg)
+![test run](img/test-run1.jpg)
 
-4. **Technical stability shapes artistic quality.**
-   Problems such as clipping, latency, unstable values, or threshold flickering were not only technical issues; they directly affected the performative quality of the system.
-
-5. **The final system emerged through rethinking, not just refining.**
-   One of the most important shifts in the project was not a small technical fix, but the decision to move from calibration and absolute data toward a system based on relative body relations.
-
+looking forward for the theater project!! :)
 
 <br><br><br>
 
@@ -878,7 +823,7 @@ Both components—sound and motion tracking—were new to me (at least in this d
 I learned:
 * Understanding of motion data processing
 * How to use and control the data
-* Real-time interaction between Ableton Live and Touchdesigner (amazing potential!)
+* Real-time interaction between Ableton Live and Touchdesigner (amazing potential! looking forward for more)
 * Working with actors
 * Further steps in sound production*  Working with OSC connections
 
